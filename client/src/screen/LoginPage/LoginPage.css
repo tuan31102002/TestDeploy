@@ -1,0 +1,91 @@
+#fas:hover {
+	cursor: pointer;
+}
+
+.login {
+	display: flex;
+	background-image: url('../../assets/register_bgr.webp');
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(158, 153, 153, 0.5);
+}
+
+#fas {
+	padding-left: 12%;
+}
+
+.login__form {
+	border-radius: 5px;
+	margin: auto;
+	background-color: #36393f;
+	width: 40%;
+}
+
+.login__form-infos {
+	width: 80%;
+	padding-bottom: 20px;
+}
+
+.login__form-header {
+	font-weight: 800;
+	margin-top: 3%;
+	text-align: center;
+	font-family: cursive;
+	color: aliceblue;
+}
+
+h4 {
+	margin-bottom: 5px;
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+input {
+	height: 36px;
+	font-size: 16px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #202225;
+	width: 100%;
+}
+
+form {
+	color: #b9bbbe;
+	display: flex;
+	justify-content: center;
+}
+
+.login__form-birthday {
+	font-weight: 400;
+	margin-bottom: 20px;
+}
+
+.submit--button {
+	cursor: pointer;
+	margin-top: 30px;
+	color: #fff;
+	background-color: #5865f2;
+	border-color: transparent;
+	border-radius: 5px;
+	padding: 5px 0;
+	width: 100%;
+}
+
+.submit--button:disabled {
+	cursor: default;
+	background-color: rgb(177, 174, 174);
+}
+
+a {
+	color: #00aff4;
+	text-decoration-style: none;
+	font-size: 12px;
+}
+
+.login__footer {
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}

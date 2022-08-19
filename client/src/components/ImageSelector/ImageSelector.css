@@ -1,0 +1,46 @@
+.image-select {
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+caption {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+}
+
+.register__infocontainer--preview {
+	width: 60%;
+	margin: 10px auto;
+}
+
+.register__avatar--selectbox {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	width: 90%;
+	background-color: #212122;
+	border: 2px solid rgba(255, 255, 255, 0.322);
+	border-radius: 5px;
+}
+
+.register__infocontainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.register__avatar-preview {
+	margin: 10px auto;
+}
+img {
+	margin: 10px auto;
+	box-sizing: border-box;
+	cursor: pointer;
+	border: 2px double gainsboro;
+	border-radius: 50%;
+	margin: auto;
+	width: 30%;
+	/* height: 20%; */
+}

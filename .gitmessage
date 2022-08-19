@@ -1,0 +1,26 @@
+# ==== Emojis ====
+# ✏  :pencil2: Tạo doc
+# 🐛  :bug: Fix bugs
+# 👍  :+1: Fix reviews
+# ✨  :sparkles: Add thêm chức năng
+# ♻️  :recycle: Refactoring
+# ==== Format ====
+# :emoji: #issueNumb {nội dung sửa}
+# Vd: :sparkles: #1 Add First Screen
+#
+# Issue Title (copy từ monday)
+# ==== The Seven Rules ====
+# 1. Separate subject from body with a blank line
+# 2. Limit the subject line to 50 characters
+# 3. Capitalize the subject line
+# 4. Do not end the subject line with a period
+# 5. Use the imperative mood in the subject line
+# 6. Wrap the body at 88 characters
+# 7. Use the body to explain what and why vs. how
+#
+# How to Write a Git Commit Message http://chris.beams.io/posts/git-commit/
+# for http://memo.goodpatch.co/2016/07/beautiful-commits-with-emojis/
+
+# Configure git commit 
+# git config commit.template .gitmessage
+# git config --global core.editor notepad.exe

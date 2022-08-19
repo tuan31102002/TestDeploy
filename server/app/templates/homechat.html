@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+
+            var socket = io.connect('http://127.0.0.1:5000');
+            socket.on('connect', function () {
+                socket.send('User has connected!');
+            });
+
+            socket.on('message', function (msg) {
+                $("#messages").append('<li>' + msg + '</li>');
+                console.log('Received message');
+            });
+          
+            $('#sendbutton').on('click', function () {
+                socket.send($('#myMessage').val());
+                $('#myMessage').val();
+            });
+
+            $('#sendGroup').on('click' , function (){
+                socket.emit('chat_room' , {'room' : $('#join_room').val() , 'mess' : $('#group_message').val() , 'userID' : $('#userID').val()})
+            })
+
+            socket.on('msg_room',function(msg) {
+		        $("#group_messages").append('<li>'+msg+'</li>');
+                
+	        });
+            
+            $('form#join').submit(function(event) {
+                socket.emit('join', {room: $('#join_room').val() , userID : $('#userID').val()});
+                return false;
+            });       
+        });
+    </script>
+
+    <div style="margin-left: 10%;margin-right: 10%;">
+
+        <div style="display: flex;justify-content: space-around;">
+            <div style="width: 40%;">
+                <table>
+                    <tr>
+                        <td>Nhập tin nhắn</td>
+                        <td>
+                            <input id="myMessage" type="text" >
+                        </td>
+                    </tr>
+                </table>
+                <button id="sendbutton" style="cursor: pointer;" >Gửi</button>
+            </div>
+            
+            <div>
+                <input type="text" id="group_message" placeholder="sendgroup">
+                <button id="sendGroup" style="cursor: pointer;" >Gửi</button>
+            </div>
+
+            <form id="join" method="POST" action='#'>
+                <input type="text" name="join_room" id="join_room" placeholder="Room Name">
+                <input type="text" name="userID" id="userID" placeholder="User ID">
+                <input type="submit" value="Join Room">
+            </form>
+
+            <div style="width: 50%;">
+                <ul id="messages"></ul>
+
+                <ul id="group_messages"></ul>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+</html>

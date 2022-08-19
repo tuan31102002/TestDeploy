@@ -1,0 +1,52 @@
+.sidebar__container {
+	height: 100vh;
+	width: 100%;
+	background-color: #36393f;
+	overflow-x: hidden;
+	border-right: 2px solid rgb(0, 0, 0);
+	flex-direction: column;
+}
+
+.sidebar__container a {
+	text-align: center;
+	text-decoration: none;
+	font-size: 30px;
+	color: #ffffff;
+	display: block;
+	width: 100%;
+}
+.sidebar--roomlist {
+	height: 90%;
+}
+.sidebar--logout {
+	padding-top: 10px;
+	margin: auto;
+	text-align: center;
+}
+
+.logout {
+	padding: 15px;
+	width: 140px;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 2px;
+	transition: all 0.2s linear;
+	cursor: pointer;
+	border: none;
+	background: #fff;
+	margin-top: 10px;
+}
+
+.logout > svg {
+	margin-right: 5px;
+	margin-left: 5px;
+	transition: all 0.5s ease-in;
+}
+
+.logout:hover > svg {
+	transform: translateX(-15px);
+}
+.logout span {
+	font-size: 20px;
+}
